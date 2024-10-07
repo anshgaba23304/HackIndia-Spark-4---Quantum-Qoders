@@ -4,8 +4,7 @@ import { ethers } from 'ethers';
 const Navbar = () => {
     const [walletAddress, setWalletAddress] = useState('');
     const [isOpen, setIsOpen] = useState(false);
-    const POLYGON_MAINNET_ID = '0x89';
-    const POLYGON_MUMBAI_TESTNET_ID = '0x13881';
+    const POLYGON_AMOY_TESTNET_ID = '0x13882'; // Replace with actual Polygon Amoy Testnet ID
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -18,8 +17,8 @@ const Navbar = () => {
                 const address = await signer.getAddress();
 
                 const { chainId } = await provider.getNetwork();
-                if (chainId !== POLYGON_MAINNET_ID && chainId !== POLYGON_MUMBAI_TESTNET_ID) {
-                    alert('Please switch to the Polygon network.');
+                if (chainId !== POLYGON_AMOY_TESTNET_ID) {
+                    alert('Please switch to the Polygon Amoy Testnet.');
                     return;
                 }
 
