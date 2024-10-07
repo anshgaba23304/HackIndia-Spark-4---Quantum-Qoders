@@ -8,4 +8,8 @@ Tixy is a blockchain-powered platform that revolutionizes the way event tickets 
   Users can purchase tickets, which are stored securely in their crypto wallets, providing easy access and ownership of their tickets.
   **Secondary Market:**  
   Tixy enables a secondary market where users can resell their tickets. Smart contracts ensure that event organizers receive royalty payments for every resale.
+  **Fraud Prevention:**  
+  Since tickets are tied to unique NFTs, duplication or selling counterfeit tickets is impossible, providing a secure environment for ticket buyers and sellers.
+- **Perpetual Royalties:**  
+  Event organizers earn perpetual royalties from the resale of tickets, with smart contracts automating the royalty distribution process.
 
