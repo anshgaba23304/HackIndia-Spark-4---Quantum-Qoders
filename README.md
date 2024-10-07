@@ -49,7 +49,7 @@ Tixy supports major cryptocurrency wallets such as MetaMask and others that are 
 
 ---
 
-.
+
 
 
 
