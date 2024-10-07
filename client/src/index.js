@@ -1,12 +1,11 @@
-// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { ChakraProvider } from '@chakra-ui/react';
+import './index.css'; // Import the Tailwind CSS file
 
 ReactDOM.render(
-    <ChakraProvider>
+    <React.StrictMode>
         <App />
-    </ChakraProvider>,
+    </React.StrictMode>,
     document.getElementById('root')
 );

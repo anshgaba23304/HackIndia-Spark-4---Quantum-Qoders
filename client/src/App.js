@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import TixyTicket from './contract/TixyTicket.json';
