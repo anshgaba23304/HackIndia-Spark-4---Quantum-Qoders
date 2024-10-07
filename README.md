@@ -1,9 +1,7 @@
-## Tixy - An NFT based Event Ticketing Platform
-# Tixy: Decentralized NFT-Based Ticketing System
 
-## Introduction
+## Tixy: Decentralized NFT-Based Ticketing System
 
-**Tixy** is a blockchain-powered platform that revolutionizes event ticketing by utilizing NFTs (Non-Fungible Tokens) to create, distribute, and manage tickets securely and transparently. It addresses common issues like fraud, counterfeit tickets, and lack of royalty revenue from secondary market sales.
+##**Tixy** is a blockchain-powered platform that revolutionizes event ticketing by utilizing NFTs (Non-Fungible Tokens) to create, distribute, and manage tickets securely and transparently. It addresses common issues like fraud, counterfeit tickets, and lack of royalty revenue from secondary market sales.
 
 ## Core Features
 
