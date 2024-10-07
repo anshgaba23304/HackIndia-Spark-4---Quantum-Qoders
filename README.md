@@ -20,4 +20,36 @@
 - **Perpetual Royalties:**  
   Event organizers earn perpetual royalties from the resale of tickets, with smart contracts automating the royalty distribution process.
 
+  ## How to Use Tixy
+
+### 1. For Event Organizers:
+- **Minting Tickets:**
+  1. Register as an event organizer on the Tixy platform.
+  2. Create your event and define the ticket details (e.g., event date, venue, ticket type, price).
+  3. Mint event tickets as NFTs on the blockchain, ensuring their authenticity and uniqueness.
+  4. Tickets are automatically made available for purchase on Tixy.
+
+- **Managing Resales:**
+  1. Track ticket sales and resales through your dashboard.
+  2. Earn royalties from secondary market resales, automatically distributed via smart contracts.
+
+### 2. For Users (Ticket Buyers):
+- **Buying Tickets:**
+  1. Create an account on Tixy and connect your crypto wallet.
+  2. Browse available events and select the tickets you wish to purchase.
+  3. Purchase tickets with supported cryptocurrencies. Tickets are stored in your wallet as NFTs.
+
+- **Reselling Tickets:**
+  1. If you can't attend the event, list your ticket for resale in the Tixy secondary market.
+  2. Once resold, royalties will be automatically transferred to the event organizer, and you receive the remaining amount.
+
+### 3. Supported Wallets:
+Tixy supports major cryptocurrency wallets such as MetaMask and others that are compatible with NFT storage.
+
+
+---
+
+.
+
+
 
