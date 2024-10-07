@@ -4,9 +4,9 @@ import TixyTicket from './contract/TixyTicket.json';
 import HeroSection from './components/HeroSection';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import TicketCard from './components/TicketCard';
+//import TicketCard from './components/TicketCard';
 import MintTicketForm from './components/MintTicketForm';
-
+import TicketCardList from './components/TicketCardList';
 const contractAddress = "0xDcC9B2BE80667b57c2133C8A4442ECd49E63452d";
 
 function App() {
@@ -62,17 +62,9 @@ function App() {
                 mintTicket={mintTicket}
                 loading={loading}
             />
-            <div className="flex justify-center flex-wrap mt-8">
-                <TicketCard
-                    title="Concert Ticket"
-                    imageSrc="https://b.zmtcdn.com/data/zomaland/1972f38023c561f25b5c96e0b99cad471725427050.png?fit=around%7C600%3A600"
-                    description="Join us for an unforgettable night!"
-                />
-                <TicketCard
-                    title="Festival Pass"
-                    imageSrc="https://b.zmtcdn.com/data/zomaland/598208eb93184b88270c8c55b97291811725427062.png?fit=around%7C600%3A600"
-                    description="Get your pass for the biggest festival of the year!"
-                />
+            <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+
+                <TicketCardList />
             </div>
             <Footer />
         </div>

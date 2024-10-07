@@ -11,7 +11,6 @@ const TicketCard = ({ eventName, eventDate, ticketPrice, imageUrl }) => {
       
       <div className="p-6">
         <div className="flex flex-col space-y-4">
-          
           {/* Event Name */}
           <h3 className="text-xl font-bold text-gray-800 dark:text-white truncate">
             {eventName}
