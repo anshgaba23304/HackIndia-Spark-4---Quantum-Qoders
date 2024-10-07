@@ -3,7 +3,7 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: "url('/path/to/your/background.jpg')" }}>
+    <div className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: "url('ahha')" }}>
       {/* Optional Overlay for Better Contrast */}
       <div className="absolute inset-0 bg-black opacity-50" />
 
