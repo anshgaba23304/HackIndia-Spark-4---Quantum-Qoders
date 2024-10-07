@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Box, Flex, Button, HStack, Text, IconButton, Collapse, useDisclosure } from '@chakra-ui/react';
 import { ethers } from 'ethers';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 const Navbar = () => {
     const [walletAddress, setWalletAddress] = useState('');
-    const { isOpen, onToggle } = useDisclosure(); // Chakra's useDisclosure for better control
+    const [isOpen, setIsOpen] = useState(false);
     const POLYGON_MAINNET_ID = '0x89';
     const POLYGON_MUMBAI_TESTNET_ID = '0x13881';
+
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     const connectWallet = async () => {
         if (typeof window.ethereum !== 'undefined') {
@@ -33,109 +33,76 @@ const Navbar = () => {
     };
 
     return (
-        <Box
-            bgGradient="linear(to-r, teal.400, teal.600)" // Gradient background
-            px={4}
-            py={4}
-            shadow="md"
-            position="fixed"
-            width="100%"
-            zIndex="10"
-        >
-            <Flex h={16} alignItems="center" justifyContent="space-between" maxW="7xl" mx="auto">
-                <Text fontSize="2xl" fontWeight="bold" color="white">
-                    Tixy
-                </Text>
-                <HStack spacing={6} display={{ base: 'none', md: 'flex' }}>
-                    <Button variant="ghost" color="white" _hover={{ bg: 'whiteAlpha.300' }} _focus={{ outline: 'none' }}>
-                        Home
-                    </Button>
-                    <Button variant="ghost" color="white" _hover={{ bg: 'whiteAlpha.300' }} _focus={{ outline: 'none' }}>
-                        Events
-                    </Button>
-                    <Button variant="ghost" color="white" _hover={{ bg: 'whiteAlpha.300' }} _focus={{ outline: 'none' }}>
-                        About Us
-                    </Button>
-                    <Button variant="ghost" color="white" _hover={{ bg: 'whiteAlpha.300' }} _focus={{ outline: 'none' }}>
-                        Contact
-                    </Button>
-                </HStack>
+        <nav className="bg-gradient-to-r from-teal-400 to-teal-600 px-4 py-4 shadow-md fixed w-full z-10">
+            <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
+                <div className="text-2xl font-bold text-white">Tixy</div>
 
-                <IconButton
-                    aria-label="Toggle Navigation"
-                    icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                    variant="outline"
-                    color="white"
-                    display={{ md: 'none' }}
-                    onClick={onToggle}
-                />
+                <div className="hidden md:flex space-x-6">
+                    <button className="text-white hover:bg-white/30 px-3 py-2 rounded">Home</button>
+                    <button className="text-white hover:bg-white/30 px-3 py-2 rounded">Events</button>
+                    <button className="text-white hover:bg-white/30 px-3 py-2 rounded">About Us</button>
+                    <button className="text-white hover:bg-white/30 px-3 py-2 rounded">Contact</button>
+                </div>
+                <div className="md:hidden">
+                    <button
+                        onClick={toggleMenu}
+                        className="text-white focus:outline-none"
+                    >
+                        {isOpen ? (
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                        ) : (
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                ></path>
+                            </svg>
+                        )}
+                    </button>
+                </div>
 
-                <Button
+                {/* Wallet Connect Button */}
+                <button
                     onClick={connectWallet}
-                    colorScheme="whiteAlpha"
-                    variant="solid"
-                    size="md"
-                    bg="whiteAlpha.700"
-                    color="teal.800"
-                    _hover={{ bg: 'whiteAlpha.900' }}
-                    _focus={{ outline: 'none' }}
+                    className="bg-white/70 text-teal-800 px-4 py-2 rounded-md text-md hover:bg-white/90"
                 >
                     {walletAddress
                         ? `Connected: ${walletAddress.substring(0, 6)}...${walletAddress.substring(walletAddress.length - 4)}`
                         : 'Connect Wallet'}
-                </Button>
-            </Flex>
+                </button>
+            </div>
 
-            <Collapse in={isOpen} animateOpacity>
-                <Flex
-                    direction="column"
-                    bg="teal.600"
-                    display={{ md: 'none' }}
-                    px={4}
-                    py={2}
-                    rounded="md"
-                    mt={4}
-                    shadow="md"
-                >
-                    <Button
-                        variant="ghost"
-                        color="white"
-                        _hover={{ bg: 'whiteAlpha.300' }}
-                        _focus={{ outline: 'none' }}
-                        onClick={onToggle}
-                    >
-                        Home
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        color="white"
-                        _hover={{ bg: 'whiteAlpha.300' }}
-                        _focus={{ outline: 'none' }}
-                        onClick={onToggle}
-                    >
-                        Events
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        color="white"
-                        _hover={{ bg: 'whiteAlpha.300' }}
-                        _focus={{ outline: 'none' }}
-                        onClick={onToggle}
-                    >
-                        About Us
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        color="white"
-                        _hover={{ bg: 'whiteAlpha.300' }}
-                        _focus={{ outline: 'none' }}
-                        onClick={onToggle}
-                    >
-                        Contact
-                    </Button>
-                </Flex>
-            </Collapse>
-        </Box>
+            {/* Mobile Menu */}
+            <div className={`${isOpen ? 'block' : 'hidden'} md:hidden mt-4 bg-teal-600 rounded-md shadow-md`}>
+                <div className="px-4 py-2">
+                    <button className="block text-white hover:bg-white/30 w-full text-left py-2" onClick={toggleMenu}>Home</button>
+                    <button className="block text-white hover:bg-white/30 w-full text-left py-2" onClick={toggleMenu}>Events</button>
+                    <button className="block text-white hover:bg-white/30 w-full text-left py-2" onClick={toggleMenu}>About Us</button>
+                    <button className="block text-white hover:bg-white/30 w-full text-left py-2" onClick={toggleMenu}>Contact</button>
+                </div>
+            </div>
+        </nav>
     );
 };
 

@@ -1,94 +1,50 @@
-// src/components/Footer.js
 import React from 'react';
-import {
-  Box,
-  Container,
-  Stack,
-  Text,
-  HStack,
-  IconButton,
-  useColorModeValue,
-  Divider,
-  Link as ChakraLink,
-  Flex,
-} from '@chakra-ui/react';
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
-  const bgColor = useColorModeValue('gray.800', 'gray.100');
-  const textColor = useColorModeValue('white', 'gray.800');
-  
   return (
-    <Box bg={bgColor} color={textColor} py={10}>
-      <Container maxW="container.xl">
-        <Stack spacing={8}>
+    <div className="bg-gray-800 text-white py-10">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <div className="flex justify-between items-center flex-wrap">
           {/* Branding Section */}
-          <Flex justify="space-between" align="center" wrap="wrap">
-            <Text fontSize="2xl" fontWeight="bold" letterSpacing="wider">
-              Tixy Ticketing
-            </Text>
-            <HStack spacing={4} mt={{ base: 4, md: 0 }}>
-              <IconButton
-                as={ChakraLink}
-                href="https://twitter.com/"
-                aria-label="Twitter"
-                icon={<FaTwitter />}
-                variant="outline"
-                colorScheme="teal"
-                size="lg"
-              />
-              <IconButton
-                as={ChakraLink}
-                href="https://facebook.com/"
-                aria-label="Facebook"
-                icon={<FaFacebookF />}
-                variant="outline"
-                colorScheme="teal"
-                size="lg"
-              />
-              <IconButton
-                as={ChakraLink}
-                href="https://instagram.com/"
-                aria-label="Instagram"
-                icon={<FaInstagram />}
-                variant="outline"
-                colorScheme="teal"
-                size="lg"
-              />
-              <IconButton
-                as={ChakraLink}
-                href="https://linkedin.com/"
-                aria-label="LinkedIn"
-                icon={<FaLinkedinIn />}
-                variant="outline"
-                colorScheme="teal"
-                size="lg"
-              />
-            </HStack>
-          </Flex>
+          <h1 className="text-2xl font-bold tracking-wider">Tixy Ticketing</h1>
+          <div className="mt-4 md:mt-0 flex space-x-4">
+            <a href="https://twitter.com/" aria-label="Twitter" className="text-teal-400 hover:text-teal-300">
+              <FaTwitter size={24} />
+            </a>
+            <a href="https://facebook.com/" aria-label="Facebook" className="text-teal-400 hover:text-teal-300">
+              <FaFacebookF size={24} />
+            </a>
+            <a href="https://instagram.com/" aria-label="Instagram" className="text-teal-400 hover:text-teal-300">
+              <FaInstagram size={24} />
+            </a>
+            <a href="https://linkedin.com/" aria-label="LinkedIn" className="text-teal-400 hover:text-teal-300">
+              <FaLinkedinIn size={24} />
+            </a>
+          </div>
+        </div>
 
-          <Divider borderColor={useColorModeValue('gray.700', 'gray.300')} />
+        <hr className="border-gray-700 my-4" />
 
-          {/* Navigation Links */}
-          <HStack spacing={8} justify="center" wrap="wrap">
-            <ChakraLink href="/about" color={textColor} fontSize="sm" _hover={{ textDecoration: 'underline' }}>
-              About Us
-            </ChakraLink>
-            <ChakraLink href="/events" color={textColor} fontSize="sm" _hover={{ textDecoration: 'underline' }}>
-              Events
-            </ChakraLink>
-            <ChakraLink href="/contact" color={textColor} fontSize="sm" _hover={{ textDecoration: 'underline' }}>
-              Contact
-            </ChakraLink>
-          </HStack>
+        {/* Navigation Links */}
+        <div className="flex justify-center space-x-8 flex-wrap mb-4">
+          <a href="/about" className="text-white text-sm hover:underline">
+            About Us
+          </a>
+          <a href="/events" className="text-white text-sm hover:underline">
+            Events
+          </a>
+          <a href="/contact" className="text-white text-sm hover:underline">
+            Contact
+          </a>
+        </div>
 
-          {/* Copyright Section */}
-          <Text fontSize="sm" textAlign="center">
-            &copy; {new Date().getFullYear()} Tixy Ticketing. All rights reserved.
-          </Text>
-        </Stack>
-      </Container>
-    </Box>
+        {/* Copyright Section */}
+        <p className="text-sm text-center">
+          &copy; {new Date().getFullYear()} Tixy Ticketing. All rights reserved.
+        </p>
+      </div>
+    </div>
   );
 };
 
