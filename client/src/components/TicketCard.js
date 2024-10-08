@@ -19,7 +19,7 @@ const TicketCard = ({ eventName, eventDate, ticketPrice, imageUrl }) => {
           {/* Event Date and Ticket Price */}
           <div className="flex justify-between items-center w-full text-gray-500 dark:text-gray-400">
             <span className="text-sm">{eventDate}</span>
-            <span className="bg-teal-100 dark:bg-teal-700 text-teal-800 p-1 rounded-md">
+            <span className="bg-teal-100 dark:bg-teal-100 text-teal-800 p-1 rounded-md">
               {ticketPrice} Polygon
             </span>
           </div>

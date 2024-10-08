@@ -62,7 +62,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-teal-500 p-4 flex justify-between items-center">
-      <h1 className="text-white text-xl">DApp Navbar</h1>
+      <h1 className="text-white text-xl">Tixy</h1>
       <div>
         <button
           onClick={connectWallet}
